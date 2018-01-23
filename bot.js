@@ -47,7 +47,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'sending sos...'
+                    message: 'Commands: !roll, !time, !raid, !ping'
                 });
             break;
             
