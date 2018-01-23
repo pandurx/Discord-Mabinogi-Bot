@@ -44,7 +44,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'roll':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'You rolled a ' + Math.floor(Math.random() * 100);
+                    message: 'You rolled a ' + Math.floor(Math.random() * Math.floor(100))
                 });
             break;
                 
