@@ -12,12 +12,14 @@ var bot = new Discord.Client({
    token: process.env.BOT_TOKEN,
    autorun: true
 });
+bot.user.setGame('GAME HERE');
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
-    bot.user.setGame('use !help');
 });
+
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
