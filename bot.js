@@ -1,11 +1,13 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
     colorize: true
 });
+
 logger.level = 'debug';
 // Initialize Discord Bot
 var bot = new Discord.Client({
@@ -23,7 +25,6 @@ bot.on('ready', function (evt) {
             { name: 'you play', type: 3 }
     });
 });
-
 
 
 bot.on('message', function (user, userID, channelID, message, evt) {
@@ -53,7 +54,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'roll':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'You rolled a ' + Math.floor(Math.random() * Math.floor(100))
+                    message: 'You rolled ' + Math.floor(Math.random() * Math.floor(100))
                 });
             break;
                 
@@ -61,11 +62,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 var time = new Date();
                 bot.sendMessage({
                     to: channelID,
-                    message: 'The current time is ' + time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+                    message: 'The current time is ' + time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) + ' GMT'
                 });
             break;
                 
-                
+            case 'raid':
+                var time = new Date();
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Prairie (6PM-6:30PM, 10PM-10:30PM) | Desert (1:30PM-2PM, 8PM-8:30PM) | Black (2PM-3PM, 10PM-11PM) EST'
+                });
+            break;
             // Just add any case commands if you want to..
          }
      }
