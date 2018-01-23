@@ -36,7 +36,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'laughing':
                 bot.sendMessage({
                     to: channelID,
-                    message: '"I thought what I'd do was, I'd pretend I was one of those deaf-mutes."'
+                    message: '"I thought what I\'d do was, I\'d pretend I was one of those deaf-mutes."'
                 });
                 break;
             case: 'help':
