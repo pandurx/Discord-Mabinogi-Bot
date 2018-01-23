@@ -40,7 +40,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'sending sos...'
                 });
             break;
-                
+            
+            case 'roll':
+                var dice = Math.floor(Math.random() * 100);  
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'You rolled a ' + dice;
+                });
+            break;
             // Just add any case commands if you want to..
          }
      }
