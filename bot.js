@@ -18,7 +18,10 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
     
-    bot.user.setPresence( { game: {name: 'Yes boss!', type: 0 }});
+    bot.setPresence( { 
+        game: 
+            { name: 'Yes boss!', type: 3 }
+    });
 });
 
 
