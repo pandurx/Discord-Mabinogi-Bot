@@ -33,18 +33,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Pong!'
                 });
             break;
-            case 'laughing':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'I thought what Id do was, Id pretend I was one of those deaf-mutes.'
-                });
-                break;
-            case: 'help':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'play ping pong and a quote'
-                });
-                break;
+
             // Just add any case commands if you want to..
          }
      }
