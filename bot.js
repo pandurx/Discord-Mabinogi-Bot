@@ -19,6 +19,7 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
 
+bot.user.setPresence({ game: { name: 'yourGameGoesHere', type: 0 } });
 
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it will execute a command
