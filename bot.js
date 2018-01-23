@@ -57,6 +57,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
                 
+            case 'time':
+                var time = new Date();
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'The current time is ' + time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+                });
+            break;
+                
+                
             // Just add any case commands if you want to..
          }
      }
