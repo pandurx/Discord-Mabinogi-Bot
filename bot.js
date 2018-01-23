@@ -20,7 +20,7 @@ bot.on('ready', function (evt) {
     
     bot.setPresence( { 
         game: 
-            { name: 'Yes boss!', type: 3 }
+            { name: 'you play', type: 3 }
     });
 });
 
