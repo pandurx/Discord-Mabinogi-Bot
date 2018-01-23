@@ -1,11 +1,13 @@
 {
   "name": "pandurx-bot",
+  "repository": "https://github.com/pandurx/pandurx-bot.git",
+  "license": "UNLICENSED",
   "version": "1.0.0",
   "description": "My own Discord bot",
   "main": "bot.js",
   "author": "Christine Y",
   "dependencies": {
-    "discord.io": "^2.5.3",
+    "discord.io": "github:woor/discord.io#gateway_v6",
     "winston": "^2.4.0"
   }
 }
