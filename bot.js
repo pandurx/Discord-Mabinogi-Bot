@@ -31,7 +31,7 @@ bot.on('ready', function (evt) {
         var interval = setInterval (function () {
 
                 var time = new Date();
-    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' hour12: false });
+    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
             
               bot.sendMessage({
                   to: '404465250033991694',
