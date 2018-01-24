@@ -31,14 +31,14 @@ bot.on('ready', function (evt) {
         var interval = setInterval (function () {
 
                 var time = new Date();
-    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' hour12: false });
             
               bot.sendMessage({
                   to: '404465250033991694',
                   message: "time: " + current_time // message to send
                 });
             
-            if (current_time == "23:30") {
+            if (current_time == "23:33:11") {
                 bot.sendMessage({
                   to: '404465250033991694',
                   message: "pong" // message to send
