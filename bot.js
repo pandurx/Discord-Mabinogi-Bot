@@ -35,6 +35,7 @@ bot.on('ready', function (evt) {
             });
           }, 1000); // time between each interval in milliseconds
         }
+    }
 });
 
 
