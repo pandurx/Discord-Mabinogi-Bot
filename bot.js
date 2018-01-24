@@ -26,17 +26,27 @@ bot.on('ready', function (evt) {
     });
     
 
-    
+    // array of dragon raids
+    var dragon_raids = {
+        "23:00:00": "prairie",
+        "03:00:00": "prairie",
+        desert1: "not avail",
+        "01:00:00": "desert2",
+        black1: "not avail",
+        black2: "not avail",
+        white1: "not avail",
+        "19:00:00": "hello world!"
+    };
     
         var interval = setInterval (function () {
 
             var time = new Date();
             var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
 
-            if (current_time == "23:33:11") {
+            if (current_time in dragon_raids) {
                 bot.sendMessage({
                   to: '404465250033991694',
-                  message: "pong" // message to send
+                  message: dragon_raids[current_time] // message to send
                 });
             }
             
