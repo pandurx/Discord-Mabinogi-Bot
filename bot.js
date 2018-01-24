@@ -30,13 +30,15 @@ bot.on('ready', function (evt) {
     
     
         var interval = setInterval (function () {
+            
             if (current_time == '18:18') {
                 bot.sendMessage({
                   to: '404465250033991694',
                   message: "pong" // message to send
                 });
-              }, 1000); // time between each interval in milliseconds
             }
+              }, 1000); // time between each interval in milliseconds
+            
         });
 
 
