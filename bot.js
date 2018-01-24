@@ -30,6 +30,11 @@ bot.on('ready', function (evt) {
     
     
         var interval = setInterval (function () {
+
+              bot.sendMessage({
+                  to: '404465250033991694',
+                  message: "time: " + current_time // message to send
+                });
             
             if (current_time == "18:25") {
                 bot.sendMessage({
