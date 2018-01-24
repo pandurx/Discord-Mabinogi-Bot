@@ -24,6 +24,13 @@ bot.on('ready', function (evt) {
         game: 
             { name: 'you play', type: 3 }
     });
+    
+    var interval = setInterval (function (){
+        bot.sendMessage({
+          to: 404465250033991694,
+          message: "pong" // message to send
+        });
+      }, 1000); // time between each interval in milliseconds
 });
 
 
