@@ -31,7 +31,7 @@ bot.on('ready', function (evt) {
     
         var interval = setInterval (function () {
             
-            if (current_time == '18:20') {
+            if (current_time == "18:25") {
                 bot.sendMessage({
                   to: '404465250033991694',
                   message: "pong" // message to send
