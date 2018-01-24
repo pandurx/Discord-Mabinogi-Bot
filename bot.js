@@ -25,16 +25,16 @@ bot.on('ready', function (evt) {
             { name: 'you play', type: 3 }
     });
     
-    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    var time = new Date();
+    var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
     
-    if (current_time == '11:10 PM') {
-        var interval = setInterval (function (){
+    if (current_time == '18:16') {
+        var interval = setInterval (function () {
             bot.sendMessage({
               to: '404465250033991694',
               message: "pong" // message to send
             });
           }, 1000); // time between each interval in milliseconds
-        }
     }
 });
 
