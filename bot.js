@@ -35,7 +35,7 @@ bot.on('ready', function (evt) {
         black1: "not avail",
         black2: "not avail",
         white1: "not avail",
-        "19:06:00": "hello world!"
+        "00:14:25": "hello world!"
     };
     
         var interval = setInterval (function () {
