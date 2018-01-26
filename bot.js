@@ -61,7 +61,7 @@ bot.on("presence", function (user, status, gameid) {
     
     bot.sendMessage({
       to: '404465250033991694',
-      message: "username: " + user.username + " / status: " + status + " / gameid: " + gameid
+      message: "username: " + JSON.stringify(user) + " / status: " + status + " / gameid: " + gameid
     });
     
     /*if (status == "online") {
