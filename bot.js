@@ -54,26 +54,26 @@ bot.on('ready', function (evt) {
         }, 1000); // time between each interval in milliseconds
 });
 
-bot.on("presence", function (user, status, gameid) {
+bot.on("presence", function (user, userID, status, gameid) {
     
     console.log("hey there, you logged in :P");
     
-    
+    /*
     bot.sendMessage({
       to: '404465250033991694',
       message: "username: " + JSON.stringify(user) + " / status: " + status + " / gameid: " + gameid
     });
-    
-    /*if (status == "online") {
-        switch (user.username) {
+    */
+    if (status == "online") {
+        switch (user) {
             case "Finley":
                 bot.sendMessage({
                   to: '404465250033991694',
-                  message: "hello world!!!!!!"
+                  message: "You're alive! Welcome back!!"
                 });
                 break;
         }
-    }*/
+    }
 });
 
 
