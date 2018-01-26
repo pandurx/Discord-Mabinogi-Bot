@@ -26,6 +26,7 @@ bot.on('ready', function (evt) {
     });
     
 
+    /* scheduled announcement */
     // array of dragon raids
     var dragon_raids = {
         "23:00:00": "prairie",
@@ -38,20 +39,33 @@ bot.on('ready', function (evt) {
         "00:14:25": "hello world!"
     };
     
-        var interval = setInterval (function () {
+    var interval = setInterval (function () {
 
-            var time = new Date();
-            var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+        var time = new Date();
+        var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
 
-            if (current_time in dragon_raids) {
+        if (current_time in dragon_raids) {
+            bot.sendMessage({
+              to: '404465250033991694',
+              message: dragon_raids[current_time] // message to send
+            });
+        }
+
+        }, 1000); // time between each interval in milliseconds
+});
+
+bot.on("presence", function (user, status, gameid) {
+    if (status == "online") {
+        switch (user.username) {
+            case "Finley":
                 bot.sendMessage({
                   to: '404465250033991694',
-                  message: dragon_raids[current_time] // message to send
+                  message: "hello world!!!!!!"
                 });
-            }
-            
-            }, 1000); // time between each interval in milliseconds
-        });
+                break;
+        }
+    }
+});
 
 
 bot.on('message', function (user, userID, channelID, message, evt) {
