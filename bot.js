@@ -57,6 +57,13 @@ bot.on('ready', function (evt) {
 bot.on("presence", function (user, status, gameid) {
     
     console.log("hey there, you logged in :P");
+    
+    
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: "hello world!!!!!!"
+    });
+    
     /*if (status == "online") {
         switch (user.username) {
             case "Finley":
