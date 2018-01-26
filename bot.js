@@ -57,7 +57,7 @@ bot.on('ready', function (evt) {
 bot.on("presence", function (user, status, gameid) {
     
     console.log("hey there, you logged in :P");
-    if (status == "online") {
+    /*if (status == "online") {
         switch (user.username) {
             case "Finley":
                 bot.sendMessage({
@@ -66,7 +66,7 @@ bot.on("presence", function (user, status, gameid) {
                 });
                 break;
         }
-    }
+    }*/
 });
 
 
