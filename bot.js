@@ -29,20 +29,20 @@ bot.on('ready', function (evt) {
     /* scheduled announcement */
     // array of dragon raids
     var dragon_raids = {
-        "23:00:00": "prairie",
-        "03:00:00": "prairie",
-        desert1: "not avail",
-        "01:00:00": "desert2",
-        black1: "not avail",
-        black2: "not avail",
-        white1: "not avail",
-        "00:14:25": "hello world!"
+        "18:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
+        "22:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
+        "13:30:00": "Desert Dragon Raid will be starting @ Sheep Mark",
+        "20:00:00": "Desert Dragon Raid will be starting @ Sheep Mark",
+        "14:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
+        "22:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
+        "14:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
+        "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark"
     };
     
     var interval = setInterval (function () {
 
         var time = new Date();
-        var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+        var current_time = time.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
 
         if (current_time in dragon_raids) {
             bot.sendMessage({
