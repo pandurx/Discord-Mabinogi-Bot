@@ -58,12 +58,12 @@ bot.on("presence", function (user, userID, status, gameid) {
     
     console.log("hey there, you logged in :P");
     
-    /*
+    
     bot.sendMessage({
       to: '404465250033991694',
       message: "username: " + JSON.stringify(user) + " / status: " + status + " / gameid: " + gameid
     });
-    */
+    
     if (status == "online") {
         switch (user) {
             case "Finley":
