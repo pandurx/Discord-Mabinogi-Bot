@@ -54,14 +54,14 @@ bot.on('ready', function (evt) {
         }, 1000); // time between each interval in milliseconds
 });
 
-bot.on("presence", function (user, userID, status, gameid) {
+bot.on("presence", function (user, userid, status, gameid) {
     
     console.log("hey there, you logged in :P");
     
     
     bot.sendMessage({
       to: '404465250033991694',
-      message: "username: " + JSON.stringify(user) + " / status: " + status + " / gameid: " + gameid
+      message: "username: " + JSON.stringify(user) + " / " + JSON.stringify(userid) + "  / status: " + status + " / gameid: " + gameid
     });
     
     if (status == "online") {
