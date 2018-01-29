@@ -46,7 +46,7 @@ bot.on('ready', function (evt) {
 
         if (current_time in dragon_raids) {
             bot.sendMessage({
-              to: '404465250033991694',
+              to: '255848218045186048',
               message: dragon_raids[current_time] // message to send
             });
         }
