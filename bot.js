@@ -34,7 +34,7 @@ bot.on('ready', function (evt) {
         "13:30:00": "Desert Dragon Raid will be starting @ Sheep Mark",
         "20:00:00": "Desert Dragon Raid will be starting @ Sheep Mark",
         "14:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
-        "22:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
+        "22:00:01": "Black Dragon Raid will be starting @ Scorpion Mark",
         "14:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
         "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark"
     };
@@ -46,7 +46,7 @@ bot.on('ready', function (evt) {
 
         if (current_time in dragon_raids) {
             bot.sendMessage({
-              to: '255848218045186048',
+              to: '409032469959016449',
               message: dragon_raids[current_time] // message to send
             });
         }
