@@ -126,7 +126,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
                 
             case 'set':
-                
+               /* 
                 const { Client } = require('pg');
 
 pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -137,7 +137,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
    });
 });
                 
-                
+                */
                 bot.sendMessage({
                     to: channelID,
                     message: 'hey this is still in progress..'
