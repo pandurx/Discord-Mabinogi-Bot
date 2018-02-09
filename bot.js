@@ -125,7 +125,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
                 
                 
-            case 'set-intro':
+            case 'set':
                 
                 const { Client } = require('pg');
 
