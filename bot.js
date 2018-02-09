@@ -123,6 +123,33 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Prairie (6PM-6:30PM, 10PM-10:30PM) | Desert (1:30PM-2PM, 8PM-8:30PM) | Black (2PM-3PM, 10PM-11PM) EST'
                 });
             break;
+                
+                
+            case 'set-intro':
+                
+                const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+client.connect();
+
+client.query('SELECT * FROM user_intro;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
+                
+                
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'hey this is still in progress..'
+               });
+            break;             
             // Just add any case commands if you want to..
          }
      }
