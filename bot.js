@@ -149,7 +149,7 @@ const client = new Client({
 
 client.connect();
 
-client.query('SELECT * FROM user_intro;', (err, res) => {
+client.query("SELECT * FROM user_intro FROM information_schema.tables;", (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
