@@ -129,25 +129,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
                 const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query('SELECT * FROM user_intro;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-      
-                      
-                bot.sendMessage({
-                    to: channelID,
-                    message: JSON.stringify(row)
-               });
-  }
-  client.end();
+pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+   client.query('SELECT * FROM user_intro', function(err, result) {
+      done();
+      if(err) return console.error(err);
+      console.log(result.rows);
+   });
 });
                 
                 
