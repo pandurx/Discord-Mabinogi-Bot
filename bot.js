@@ -140,7 +140,7 @@ pg.connect(process.env.DATABASE_URL, function(err, client, done) {
                 */
                 bot.sendMessage({
                     to: channelID,
-                    message: 'hey this is still in progress..'
+                    message: 'hey this is still in progress..' + process.env.DATABASE_URL
                });
             break;             
             // Just add any case commands if you want to..
