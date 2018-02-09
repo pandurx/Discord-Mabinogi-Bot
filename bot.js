@@ -127,21 +127,19 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'set':
                
-                const { Client } = require('pg');
+                /*const { Client } = require('pg');
 
 pg.connect(process.env.DATABASE_URL + '?ssl=true', function(err, client, done) {
    client.query('SELECT * FROM user_intro', function(err, result) {
       done();
       if(err) return console.error(err);
-      //console.log(result.rows);
-       
-                       bot.sendMessage({
-                    to: channelID,
-                    message: result.rows
-               });
+      console.log(result.rows);
+      
        
    });
 });
+                */
+                
                 
                 
                 bot.sendMessage({
