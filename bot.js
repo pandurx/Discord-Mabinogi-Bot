@@ -36,7 +36,16 @@ bot.on('ready', function (evt) {
         "14:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
         "22:00:01": "Black Dragon Raid will be starting @ Scorpion Mark",
         "14:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
-        "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark"
+        "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
+        
+        "16:30:00": "Yeti Raid will be starting in Physis",
+        "20:30:00": "Yeti Raid will be starting in Physis",
+        
+        "13:00:00": "Giant Sandworm Raid will be starting @ Central Muyu Desert",
+        "04:00:00": "Giant Sandworm Raid will be starting @ Central Muyu Desert",
+        
+        "19:00:00": "Red Dragon Raid will be starting @ Raspa Volcano",
+        "00:00:00": "Red Dragon Raid will be starting @ Raspa Volcano"
     };
     
     var interval = setInterval (function () {
