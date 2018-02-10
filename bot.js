@@ -27,6 +27,19 @@ bot.on('ready', function (evt) {
     
 
     /* scheduled announcement */
+    // array of fashion
+    
+    // array of jousting
+    // Mon-Sat
+    var pre_jousting = {
+        "22:00:00": "Jousting Preliminaries is starting",
+        "01:00:00": "Jousting Preliminaries is starting"
+    };
+    // Sunday
+    var final_jousting = {
+        "12:00:00": "Jousting Finals is starting on Channel 2"
+    };
+    
     // array of dragon raids
     var dragon_raids = {
         "18:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
