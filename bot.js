@@ -176,19 +176,13 @@ client.connect();
 client.query("SELECT * FROM user_intro FROM information_schema.tables;", (err, res) => {
   if (err) {
   
-                            bot.sendMessage({
-                    to: channelID,
-                    message: err
-               });
+client.on("error", (e) => console.error(e));
       
   }
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
       
-                      bot.sendMessage({
-                    to: channelID,
-                    message: JSON.stringify(row)
-               });
+ client.on("debug", (e) => console.info(e));
       
   }
   client.end();
