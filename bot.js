@@ -77,6 +77,12 @@ bot.on('ready', function (evt) {
         }, 1000); // time between each interval in milliseconds
 });
 
+bot.on("presenceUpdate", (oldMember, newMember) => {
+    if(oldMember.presence.status !== newMember.presence.status){
+        console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
+    }
+});
+
 bot.on("presence", function (user, userid, status, gameid) {
     
     console.log("hey there, you logged in :P");
