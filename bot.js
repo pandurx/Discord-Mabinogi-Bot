@@ -152,42 +152,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'set':
                
-                /*const { Client } = require('pg');
 
-pg.connect(process.env.DATABASE_URL + '?ssl=true', function(err, client, done) {
-   client.query('SELECT * FROM user_intro', function(err, result) {
-      done();
-      if(err) return console.error(err);
-      console.log(result.rows);
-      
-       
-   });
-});
-                */
-                
-                const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query("SELECT * FROM user_intro FROM information_schema.tables;", (err, res) => {
-  if (err) {
-  
-client.on("error", (e) => console.error(e));
-      
-  }
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-      
- client.on("debug", (e) => console.info(e));
-      
-  }
-  client.end();
-});
                 
                 
                 
