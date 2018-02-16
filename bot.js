@@ -167,6 +167,7 @@ pg.connect(process.env.DATABASE_URL + '?ssl=true', function(err, client, done) {
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
+    sslmode=require,
 });
 
 client.connect();
