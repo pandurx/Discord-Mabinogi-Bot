@@ -114,6 +114,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+                
+                console.log("pong!");
             break;
 
             case 'help':
