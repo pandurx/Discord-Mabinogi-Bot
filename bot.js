@@ -20,7 +20,7 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
     
-    console.log("i have been reborn again!");
+    console.log('i have been reborn again!');
     bot.setPresence( { 
         game: 
             { name: 'you play', type: 3 }
@@ -77,11 +77,11 @@ bot.on('ready', function (evt) {
         }, 1000); // time between each interval in milliseconds
 });
 
-bot.on("presenceUpdate", (oldMember, newMember) => {
+/*bot.on("presenceUpdate", (oldMember, newMember) => {
     if(oldMember.presence.status !== newMember.presence.status){
         console.log(`${newMember.user.username} is now ${newMember.presence.status}`);
     }
-});
+});*/
 
 bot.on("presence", function (user, userid, status, gameid) {
     
@@ -107,7 +107,7 @@ bot.on("presence", function (user, userid, status, gameid) {
 
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    console.log("hit me up!");
+    console.log('hit me up!');
     
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
