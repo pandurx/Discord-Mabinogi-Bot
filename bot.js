@@ -174,9 +174,22 @@ const client = new Client({
 client.connect();
 
 client.query("SELECT * FROM user_intro FROM information_schema.tables;", (err, res) => {
-  if (err) throw err;
+  if (err) {
+  
+                            bot.sendMessage({
+                    to: channelID,
+                    message: err
+               });
+      
+  }
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
+      
+                      bot.sendMessage({
+                    to: channelID,
+                    message: JSON.stringify(row)
+               });
+      
   }
   client.end();
 });
