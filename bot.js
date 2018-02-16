@@ -20,6 +20,7 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
     
+    console.log("i have been reborn again!");
     bot.setPresence( { 
         game: 
             { name: 'you play', type: 3 }
