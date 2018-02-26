@@ -217,26 +217,22 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'set':
                
-    const { Client } = require('pg');
+                const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
+                const client = new Client({
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: true,
+                });
 
-client.connect();
-//'SELECT * FROM user_intro;'
+                client.connect();
+                //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
                 //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
-client.query('INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (3, userID, \'whats new?\', \'boop\');', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-    
-    
-  client.end();
-});
+                client.query('INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (3, \'heyoo\', \'whats new?\', \'boop\');', (err, res) => {
+                    if (err) throw err;
+
+                    client.end();
+                });
         
            
                 bot.sendMessage({
