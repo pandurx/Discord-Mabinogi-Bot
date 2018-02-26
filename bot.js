@@ -226,7 +226,8 @@ const client = new Client({
 
 client.connect();
 //'SELECT * FROM user_intro;'
-client.query('INSERT INTO user_intro VALUES (userID, "online", "whats new?", "boop");', (err, res) => {
+                //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
+client.query('SELECT * FROM user_intro;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
