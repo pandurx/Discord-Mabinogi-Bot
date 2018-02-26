@@ -1,6 +1,8 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+var cron = require('cron');
+
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -16,7 +18,7 @@ var bot = new Discord.Client({
 });
 
 /* cron job.. */
-var cron = require('cron');
+
  
 var job1 = new cron.CronJob({
   cronTime: '*/1 * * * *',
