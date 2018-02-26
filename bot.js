@@ -1,7 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-//var cron = require('cron');
+var cron = require('cron');
 
 
 // Configure logger settings
@@ -19,7 +19,14 @@ var bot = new Discord.Client({
 
 /* cron job.. */
 
- 
+ var job1 = new cron.CronJob({
+  cronTime: '*/1 * * * *',
+  onTick: function() {
+    console.log('job 1 ticked');
+  },
+  start: false,
+  timeZone: 'America/New_York'
+});
 
 
 bot.on('ready', function (evt) {
