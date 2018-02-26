@@ -167,6 +167,13 @@ bot.on("presence", function (user, userid, status, gameid) {
 bot.on('message', function (user, userID, channelID, message, evt) {
     console.log('hit me up!');
     
+                    const { Client } = require('pg');
+
+                const client = new Client({
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: true,
+                });
+    
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
@@ -216,12 +223,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
               
             case 'get':
-                const { Client } = require('pg');
 
-                const client = new Client({
-                    connectionString: process.env.DATABASE_URL,
-                    ssl: true,
-                });
 
                 client.connect();
                 //'SELECT * FROM user_intro;'
@@ -247,12 +249,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'set':
                
-                const { Client } = require('pg');
+                
 
-                const client = new Client({
-                    connectionString: process.env.DATABASE_URL,
-                    ssl: true,
-                });
+
 
                 client.connect();
                 //'SELECT * FROM user_intro;'
