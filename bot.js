@@ -228,7 +228,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
                 //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
-                var query_string = 'INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (''+parseInt(userID), \'heyoo\', \'whats new?\', \'boop\');'
+                var query_string = 'INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (\'\'+parseInt(userID), \'heyoo\', \'whats new?\', \'boop\');'
                 console.log('wquery ' + query_string);
                 client.query(query_string, (err, res) => {
                     if (err) throw err;
