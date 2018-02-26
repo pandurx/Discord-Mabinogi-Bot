@@ -225,19 +225,32 @@ const client = new Client({
 });
 
 client.connect();
-
+//'SELECT * FROM user_intro;'
+client.query('INSERT INTO user_intro VALUES (userID, \'online\', \'whats new?\', \'boop\');', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+    
+    
+  client.end();
+});
+        
+                client.connect();
+//'SELECT * FROM user_intro;'
 client.query('SELECT * FROM user_intro;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
   }
+    
+    
   client.end();
 });
-                
             
                 bot.sendMessage({
                     to: channelID,
-                    message: 'hey this is still in progress..' + process.env.DATABASE_URL
+                    message: 'hey this is still in progress..';// + process.env.DATABASE_URL
                });
             break;             
             // Just add any case commands if you want to..
