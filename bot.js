@@ -73,7 +73,7 @@ const client = new Client({
 client.connect();
 //ALTER TABLE raw ALTER COLUMN id TYPE BIGINT;
     //SELECT table_schema,table_name FROM information_schema.tables;
-client.query('ALTER TABLE user_intro ALTER COLUMN user_id TYPE BIGINT;', (err, res) => {
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
