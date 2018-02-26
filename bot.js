@@ -24,7 +24,7 @@ var bot = new Discord.Client({
   onTick: function() {
     console.log('job 1 ticked');
   },
-  start: false,
+  start: true,
   timeZone: 'America/New_York'
 });
 
