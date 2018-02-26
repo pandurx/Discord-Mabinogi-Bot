@@ -214,7 +214,36 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Prairie (6PM-6:30PM, 10PM-10:30PM) | Desert (1:30PM-2PM, 8PM-8:30PM) | Black (2PM-3PM, 10PM-11PM) EST'
                 });
             break;
+              
+            case 'get':
+                const { Client } = require('pg');
+
+                const client = new Client({
+                    connectionString: process.env.DATABASE_URL,
+                    ssl: true,
+                });
+
+                client.connect();
+                //'SELECT * FROM user_intro;'
+                //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
+                //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
+                var query_string = 'SELECT * FROM user_intro WHERE user_id = '+parseInt(userID)+';'
+                console.log('wquery ' + query_string);
+                client.query(query_string, (err, res) => {
+                    if (err) throw err;
+                    
+                  for (let row of res.rows) {
+                    bot.sendMessage({
+                        to: channelID,
+                        message: JSON.stringify(row)
+                    });
+                  }
+                    
+                    //console.log(JSON.stringify(row));
+                    client.end();
+                });
                 
+            break;
                 
             case 'set':
                
