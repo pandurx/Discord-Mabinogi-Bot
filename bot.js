@@ -23,10 +23,10 @@ var bot = new Discord.Client({
  var job1 = new cron.CronJob({
   cronTime: '00 00 01 * * 1-6',
   onTick: function() {
-    console.log("preliminary jousting begins");
+    console.log('preliminary jousting begins');
     bot.sendMessage({
       to: '404465250033991694',
-      message: "Preliminary Jousting begins"
+      message: 'Preliminary Jousting begins'
     });
       
   },
@@ -38,10 +38,10 @@ var bot = new Discord.Client({
  var job2 = new cron.CronJob({
   cronTime: '00 00 22 * * 1-6',
   onTick: function() {
-    console.log("preliminary jousting begins");
+    console.log('preliminary jousting begins');
     bot.sendMessage({
       to: '404465250033991694',
-      message: "Preliminary Jousting begins"
+      message: 'Preliminary Jousting begins'
     });
       
   },
