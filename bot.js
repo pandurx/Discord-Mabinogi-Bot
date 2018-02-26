@@ -1,7 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-var cron = require('cron');
+var cron = require('/node_modules/cron');
 
 
 // Configure logger settings
