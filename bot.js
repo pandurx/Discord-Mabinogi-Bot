@@ -15,6 +15,18 @@ var bot = new Discord.Client({
    autorun: true
 });
 
+/* cron job.. */
+var cron = require('cron');
+ 
+var job1 = new cron.CronJob({
+  cronTime: '*/1 * * * *',
+  onTick: function() {
+    console.log('job 1 ticked');
+  },
+  start: false,
+  timeZone: 'America/New_York'
+});
+
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
