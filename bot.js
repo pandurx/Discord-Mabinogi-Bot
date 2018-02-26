@@ -227,7 +227,8 @@ const client = new Client({
 client.connect();
 //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
-client.query('SELECT * FROM user_intro;', (err, res) => {
+                //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
+client.query('INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (userID, "online", "whats new?", "boop");', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
@@ -237,18 +238,7 @@ client.query('SELECT * FROM user_intro;', (err, res) => {
   client.end();
 });
         
-                client.connect();
-//'SELECT * FROM user_intro;'
-client.query('SELECT * FROM user_intro;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-    
-    
-  client.end();
-});
-            
+           
                 bot.sendMessage({
                     to: channelID,
                     message: 'hey this is still in progress..'// + process.env.DATABASE_URL
