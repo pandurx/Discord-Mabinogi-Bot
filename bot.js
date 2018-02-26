@@ -228,7 +228,7 @@ client.connect();
 //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
                 //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
-client.query('INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (JSON.stringify(userID), \'online\', \'whats new?\', \'boop\');', (err, res) => {
+client.query('INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES (parseInt(JSON.stringify(userID)), \'online\', \'whats new?\', \'boop\');', (err, res) => {
   if (err) throw err;
   for (let row of res.rows) {
     console.log(JSON.stringify(row));
