@@ -249,9 +249,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'set':
                
-                
-
-
 
                 client.connect();
                 //'SELECT * FROM user_intro;'
