@@ -250,7 +250,7 @@ client.query('SELECT * FROM user_intro;', (err, res) => {
             
                 bot.sendMessage({
                     to: channelID,
-                    message: 'hey this is still in progress..';// + process.env.DATABASE_URL
+                    message: 'hey this is still in progress..'// + process.env.DATABASE_URL
                });
             break;             
             // Just add any case commands if you want to..
