@@ -20,34 +20,34 @@ var bot = new Discord.Client({
 /* cron job.. */
 
 // preliminary jousting
- var job1 = new cron.CronJob({
-  cronTime: '00 00 01 * * 1-6',
-  onTick: function() {
-    console.log('preliminary jousting begins');
-    bot.sendMessage({
-      to: '404465250033991694',
-      message: 'Preliminary Jousting begins'
-    });
+//  var job1 = new cron.CronJob({
+//   cronTime: '00 00 01 * * 1-6',
+//   onTick: function() {
+//     console.log('preliminary jousting begins');
+//     bot.sendMessage({
+//       to: '404465250033991694',
+//       message: 'Preliminary Jousting begins'
+//     });
       
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
+//   },
+//   start: true,
+//   timeZone: 'America/New_York'
+// });
 
 
- var job2 = new cron.CronJob({
-  cronTime: '00 00 22 * * 1-6',
-  onTick: function() {
-    console.log('preliminary jousting begins');
-    bot.sendMessage({
-      to: '404465250033991694',
-      message: 'Preliminary Jousting begins'
-    });
+//  var job2 = new cron.CronJob({
+//   cronTime: '00 00 22 * * 1-6',
+//   onTick: function() {
+//     console.log('preliminary jousting begins');
+//     bot.sendMessage({
+//       to: '404465250033991694',
+//       message: 'Preliminary Jousting begins'
+//     });
       
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
+//   },
+//   start: true,
+//   timeZone: 'America/New_York'
+// });
 
 
 
