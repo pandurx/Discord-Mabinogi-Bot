@@ -17,7 +17,7 @@ var bot = new Discord.Client({
    autorun: true
 });
 
-/* cron job.. */
+/* cron job... */
 
 // preliminary jousting
 //  var job1 = new cron.CronJob({
