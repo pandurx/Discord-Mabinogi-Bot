@@ -174,6 +174,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     ssl: true,
                 });
     
+    if (channelID == '409032469959016449') return;
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
