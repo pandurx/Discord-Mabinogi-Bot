@@ -206,10 +206,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'You rolled ' + Math.floor(Math.random() * Math.floor(100)) + ' ... '
                 });
                 
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Dont hurt me.. I am just a bot'
-                });
             break;
                 
             case 'time':
