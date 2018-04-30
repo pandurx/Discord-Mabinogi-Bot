@@ -21,12 +21,25 @@ var bot = new Discord.Client({
 
 // Testing cron job
  var job1 = new cron.CronJob({
-  cronTime: '* * * * 1-6',
+  cronTime: '01 * * * 1-7',
   onTick: function() {
     console.log('preliminary jousting begins');
     bot.sendMessage({
       to: '440628558298087426',
-      message: 'Testing Cron Job'
+      message: 'Testing Cron Job22'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+ var job2 = new cron.CronJob({
+  cronTime: '01 * * * 1-7',
+  onTick: function() {
+    console.log('preliminary jousting begins2');
+    bot.sendMessage({
+      to: '440628558298087426',
+      message: 'Testing Cron Job11'
     });
       
   },
@@ -34,94 +47,57 @@ var bot = new Discord.Client({
   timeZone: 'America/New_York'
 });
 
-// preliminary jousting
-//  var job1 = new cron.CronJob({
-//   cronTime: '00 00 01 * * 1-6',
-//   onTick: function() {
-//     console.log('preliminary jousting begins');
-//     bot.sendMessage({
-//       to: '404465250033991694',
-//       message: 'Preliminary Jousting begins'
-//     });
-      
-//   },
-//   start: true,
-//   timeZone: 'America/New_York'
-// });
-
-
-//  var job2 = new cron.CronJob({
-//   cronTime: '00 00 22 * * 1-6',
-//   onTick: function() {
-//     console.log('preliminary jousting begins');
-//     bot.sendMessage({
-//       to: '404465250033991694',
-//       message: 'Preliminary Jousting begins'
-//     });
-      
-//   },
-//   start: true,
-//   timeZone: 'America/New_York'
-// });
-
-
-
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
-    
-    console.log('i have been reborn again!');
-    bot.setPresence( { 
-        game: 
-            { name: 'you play', type: 3 }
+// preliminary and final jousting
+/////////////////////////////////////////////////////////////////////
+var pre_jousting_time_1 = new cron.CronJob({
+  cronTime: '00 01 * * 1-6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Preliminary Jousting begins'
     });
-    
-    
-    const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
 });
 
-client.connect();
-//ALTER TABLE raw ALTER COLUMN id TYPE BIGINT;
-    //SELECT table_schema,table_name FROM information_schema.tables;
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
+var pre_jousting_time_2 = new cron.CronJob({
+  cronTime: '00 22 * * 1-6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Preliminary Jousting begins'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
 });
-    
-    
-    
-    
 
-    /* scheduled announcement */
-    // array of fashion
-    
-    // array of jousting
-    // Mon-Sat
-    var pre_jousting = {
-        "22:00:00": "Jousting Preliminaries is starting",
-        "01:00:00": "Jousting Preliminaries is starting"
-    };
-    // Sunday
-    var final_jousting = {
-        "12:00:00": "Jousting Finals is starting on Channel 2"
-    };
-    
-    // array of dragon raids
+var final_jousting_time = new cron.CronJob({
+  cronTime: '00 22 * * 7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Preliminary Jousting begins'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
     var dragon_raids = {
         "18:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
         "22:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
+
         "13:30:00": "Desert Dragon Raid will be starting @ Sheep Mark",
         "20:00:00": "Desert Dragon Raid will be starting @ Sheep Mark",
+        
         "14:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
         "22:00:01": "Black Dragon Raid will be starting @ Scorpion Mark",
+        
         "14:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
         "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
         
@@ -134,6 +110,96 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
         "19:00:00": "Red Dragon Raid will be starting @ Raspa Volcano",
         "00:00:00": "Red Dragon Raid will be starting @ Raspa Volcano"
     };
+
+
+// dragon raids
+/////////////////////////////////////////////////////////////////////
+var black_dragon_raid_1 = new cron.CronJob({
+  cronTime: '00 14,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Black Dragon Raid will be starting @ Scorpion Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var desert_dragon_raid_1 = new cron.CronJob({
+  cronTime: '30 13 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Desert Dragon Raid will be starting @ Sheep Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var desert_dragon_raid_2 = new cron.CronJob({
+  cronTime: '00 20 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Desert Dragon Raid will be starting @ Sheep Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var prairie_raid_1 = new cron.CronJob({
+  cronTime: '00 18,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Prairie Dragon Raid will be starting @ Maiz Prairie'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+
+// initializing the bot
+/////////////////////////////////////////////////////////////////////
+bot.on('ready', function (evt) {
+
+    bot.setPresence( { 
+        game: { name: 'you play', type: 3 }
+    });
+    
+    const { Client } = require('pg');
+
+    // configure the database connection string
+	const client = new Client({
+	  connectionString: process.env.DATABASE_URL,
+	  ssl: true,
+	});
+
+	client.connect();
+	//ALTER TABLE raw ALTER COLUMN id TYPE BIGINT;
+	    //SELECT table_schema,table_name FROM information_schema.tables;
+	client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+	  if (err) throw err;
+	  for (let row of res.rows) {
+	    console.log(JSON.stringify(row));
+	  }
+	  client.end();
+	});
+	    
+    
+    /* scheduled announcement */
+    // array of fashion
+        
+    // array of dragon raids
+
     
     var interval = setInterval (function () {
 
@@ -156,11 +222,11 @@ client.query('SELECT table_schema,table_name FROM information_schema.tables;', (
     }
 });*/
 
+
+// greeting users (optional)
+/////////////////////////////////////////////////////////////////////
 bot.on("presence", function (user, userid, status, gameid) {
-    
-    console.log("hey there, you logged in :P");
-    
-    
+        
     bot.sendMessage({
       to: '404465250033991694',
       message: "username: " + JSON.stringify(user) + " / " + JSON.stringify(userid) + "  / status: " + status + " / gameid: " + gameid
@@ -179,33 +245,32 @@ bot.on("presence", function (user, userid, status, gameid) {
 });
 
 
+// sending messages to discord
+/////////////////////////////////////////////////////////////////////
 bot.on('message', function (user, userID, channelID, message, evt) {
-    console.log('hit me up!');
     
-                    const { Client } = require('pg');
+	const { Client } = require('pg');
 
-                const client = new Client({
-                    connectionString: process.env.DATABASE_URL,
-                    ssl: true,
-                });
+	const client = new Client({
+		connectionString: process.env.DATABASE_URL,
+		ssl: true,
+	});
     
+
     if (channelID == '409032469959016449') return;
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
+
+    // the bot will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
        
         args = args.splice(1);
         switch(cmd) {
-            // !ping
             case 'ping':
                 bot.sendMessage({
                     to: channelID,
                     message: 'Pong!'
                 });
-                
-                console.log("pong!");
             break;
 
             case 'help':
@@ -240,8 +305,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
               
             case 'get':
-
-
                 client.connect();
                 //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
@@ -261,12 +324,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     //console.log(JSON.stringify(row));
                     client.end();
                 });
-                
             break;
                 
             case 'set':
-               
-
                 client.connect();
                 //'SELECT * FROM user_intro;'
                 //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
