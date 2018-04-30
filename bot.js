@@ -19,6 +19,21 @@ var bot = new Discord.Client({
 
 /* cron job... */
 
+// Testing cron job
+ var job1 = new cron.CronJob({
+  cronTime: '* * * * 1-6',
+  onTick: function() {
+    console.log('preliminary jousting begins');
+    bot.sendMessage({
+      to: '440628558298087426',
+      message: 'Testing Cron Job'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 // preliminary jousting
 //  var job1 = new cron.CronJob({
 //   cronTime: '00 00 01 * * 1-6',
