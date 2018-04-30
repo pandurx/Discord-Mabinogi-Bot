@@ -21,7 +21,7 @@ var bot = new Discord.Client({
 
 // Testing cron job
  var job1 = new cron.CronJob({
-  cronTime: '01 * * * 1-7',
+  cronTime: '* * * * *',
   onTick: function() {
     console.log('preliminary jousting begins');
     bot.sendMessage({
@@ -34,7 +34,7 @@ var bot = new Discord.Client({
   timeZone: 'America/New_York'
 });
  var job2 = new cron.CronJob({
-  cronTime: '01 * * * 1-7',
+  cronTime: '* * * * *',
   onTick: function() {
     console.log('preliminary jousting begins2');
     bot.sendMessage({
@@ -88,32 +88,64 @@ var final_jousting_time = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
-    var dragon_raids = {
-        "18:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
-        "22:00:00": "Prairie Dragon Raid will be starting @ Maiz Prairie",
 
-        "13:30:00": "Desert Dragon Raid will be starting @ Sheep Mark",
-        "20:00:00": "Desert Dragon Raid will be starting @ Sheep Mark",
-        
-        "14:00:00": "Black Dragon Raid will be starting @ Scorpion Mark",
-        "22:00:01": "Black Dragon Raid will be starting @ Scorpion Mark",
-        
-        "14:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
-        "22:30:00": "White Dragon Raid will be starting @ Flightless Bird Mark",
-        
-        "16:30:00": "Yeti Raid will be starting in Physis",
-        "20:30:00": "Yeti Raid will be starting in Physis",
-        
-        "13:00:00": "Giant Sandworm Raid will be starting @ Central Muyu Desert",
-        "04:00:00": "Giant Sandworm Raid will be starting @ Central Muyu Desert",
-        
-        "19:00:00": "Red Dragon Raid will be starting @ Raspa Volcano",
-        "00:00:00": "Red Dragon Raid will be starting @ Raspa Volcano"
-    };
+// other raids
+/////////////////////////////////////////////////////////////////////
+var yeti_raid_1 = new cron.CronJob({
+  cronTime: '30 16,20 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Yeti Raid will be starting in Physis'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var giant_sandworm_raid_1 = new cron.CronJob({
+  cronTime: '00 13,04 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Giant Sandworm Raid will be starting @ Central Muyu Desert'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
 
 
 // dragon raids
 /////////////////////////////////////////////////////////////////////
+var red_dragon_raid_1 = new cron.CronJob({
+  cronTime: '00 19,00 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Red Dragon Raid will be starting @ Raspa Volcano'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var white_dragon_raid_1 = new cron.CronJob({
+  cronTime: '30 14,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'White Dragon Raid will be starting @ Flightless Bird Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 var black_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 14,22 * * 1-7',
   onTick: function() {
@@ -153,7 +185,7 @@ var desert_dragon_raid_2 = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
-var prairie_raid_1 = new cron.CronJob({
+var prairie_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 18,22 * * 1-7',
   onTick: function() {
     bot.sendMessage({
