@@ -233,7 +233,7 @@ bot.on('ready', function (evt) {
     // array of dragon raids
 
     
-    var interval = setInterval (function () {
+    /*var interval = setInterval (function () {
 
         var time = new Date();
         var current_time = time.toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
@@ -245,7 +245,7 @@ bot.on('ready', function (evt) {
             });
         }
 
-        }, 1000); // time between each interval in milliseconds
+        }, 1000);*/ // time between each interval in milliseconds
 });
 
 /*bot.on("presenceUpdate", (oldMember, newMember) => {
