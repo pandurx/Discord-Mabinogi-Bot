@@ -280,6 +280,18 @@ function translateDailies(vdaily) {
 });*/
 
 
+// pick up lines
+/////////////////////////////////////////////////////////////////////
+var pick_up_lines = [
+	'Are you a magician? Because whenever I look at you, everyone else disappears!',
+	'I am not a photographer, but I can picture me and you together.',
+	'Are you religious? Because you are the answer to all my prayers.',
+	'You do not need keys to drive me crazy.',
+	'Is it hot in here or is it just you?',
+	'Hello. Cupid called. He wants to tell you that he needs my heart back.'
+];
+
+
 // greeting users (optional)
 /////////////////////////////////////////////////////////////////////
 bot.on("presence", function (user, userid, status, gameid) {
@@ -328,6 +340,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+            break;
+
+            case 'flirt':
+            	var randomInt = Math.floor(Math.random() * Math.floor(5))
+            	var line = pick_up_lines[randomInt];
+				bot.sendMessage({
+					to: channelID,
+					message: '~ ' + line + ' ~'
+				});
             break;
 
             case 'dailies':
