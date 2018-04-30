@@ -363,7 +363,14 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: 'Commands: !roll, !time, !raid, !ping'
+                    message: '`commands will always begin with the exclamation mark! then ping, flirt, dailies, daily, help, roll, time, raid, contact`'
+                });
+            break;
+
+            case 'contact':
+                bot.sendMessage({
+                    to: channelID,
+                    message: '`this bot is self-hosted and in no way official tool for nexon, and is still work in progress. you can contact **Pandurx** for more information or report any issues relating to the bot`'
                 });
             break;
             
