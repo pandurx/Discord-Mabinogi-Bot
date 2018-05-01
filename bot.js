@@ -386,7 +386,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 var time = new Date();
                 bot.sendMessage({
                     to: channelID,
-                    message: 'The current time is ' + time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) + ' GMT'
+                    message: 'The current time is ' + time.toLocaleString('en-US', {timeZone: 'America/New_York', hour: 'numeric', minute: 'numeric', hour12: false }) + ' EST'
                 });
             break;
                 
