@@ -39,7 +39,7 @@ var chef_examination_1 = new cron.CronJob({
   cronTime: '00 13,23 * * 6',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Chef Exam is starting on channel 3'
     });
       
@@ -69,7 +69,7 @@ var pre_jousting_time_1 = new cron.CronJob({
   cronTime: '00 01 * * 1-6',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Preliminary Jousting begins'
     });
       
@@ -82,7 +82,7 @@ var pre_jousting_time_2 = new cron.CronJob({
   cronTime: '00 22 * * 1-6',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Preliminary Jousting begins'
     });
       
@@ -95,7 +95,7 @@ var final_jousting_time = new cron.CronJob({
   cronTime: '00 22 * * 7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Finals for Jousting begins on channel 2'
     });
       
@@ -111,7 +111,7 @@ var yeti_raid_1 = new cron.CronJob({
   cronTime: '30 16,20 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Yeti Raid will be starting in Physis'
     });
       
@@ -124,7 +124,7 @@ var giant_sandworm_raid_1 = new cron.CronJob({
   cronTime: '00 13,04 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Giant Sandworm Raid will be starting @ Central Muyu Desert'
     });
       
@@ -140,7 +140,7 @@ var red_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 19,00 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Red Dragon Raid will be starting @ Raspa Volcano'
     });
       
@@ -153,7 +153,7 @@ var white_dragon_raid_1 = new cron.CronJob({
   cronTime: '30 14,22 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'White Dragon Raid will be starting @ Flightless Bird Mark'
     });
       
@@ -166,7 +166,7 @@ var black_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 14,22 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Black Dragon Raid will be starting @ Scorpion Mark'
     });
       
@@ -179,7 +179,7 @@ var desert_dragon_raid_1 = new cron.CronJob({
   cronTime: '30 13 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Desert Dragon Raid will be starting @ Sheep Mark'
     });
       
@@ -192,7 +192,7 @@ var desert_dragon_raid_2 = new cron.CronJob({
   cronTime: '00 20 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Desert Dragon Raid will be starting @ Sheep Mark'
     });
       
@@ -205,7 +205,7 @@ var prairie_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 18,22 * * 1-7',
   onTick: function() {
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '409032469959016449',
       message: 'Prairie Dragon Raid will be starting @ Maiz Prairie'
     });
       
