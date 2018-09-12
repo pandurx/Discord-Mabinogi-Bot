@@ -149,11 +149,37 @@ var red_dragon_raid_1 = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
+var red_dragon_raid_1T = new cron.CronJob({
+  cronTime: '00 19,00 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
+      message: 'Red Dragon Raid will be starting @ Raspa Volcano'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 var white_dragon_raid_1 = new cron.CronJob({
   cronTime: '30 14,22 * * 1-7',
   onTick: function() {
     bot.sendMessage({
       to: '409032469959016449',
+      message: 'White Dragon Raid will be starting @ Flightless Bird Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var white_dragon_raid_1T = new cron.CronJob({
+  cronTime: '30 14,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
       message: 'White Dragon Raid will be starting @ Flightless Bird Mark'
     });
       
@@ -175,11 +201,37 @@ var black_dragon_raid_1 = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
+var black_dragon_raid_1T = new cron.CronJob({
+  cronTime: '00 14,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
+      message: 'Black Dragon Raid will be starting @ Scorpion Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 var desert_dragon_raid_1 = new cron.CronJob({
   cronTime: '30 13 * * 1-7',
   onTick: function() {
     bot.sendMessage({
       to: '409032469959016449',
+      message: 'Desert Dragon Raid will be starting @ Sheep Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var desert_dragon_raid_1T = new cron.CronJob({
+  cronTime: '30 13 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
       message: 'Desert Dragon Raid will be starting @ Sheep Mark'
     });
       
@@ -201,6 +253,19 @@ var desert_dragon_raid_2 = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
+var desert_dragon_raid_2T = new cron.CronJob({
+  cronTime: '00 20 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
+      message: 'Desert Dragon Raid will be starting @ Sheep Mark'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 var prairie_dragon_raid_1 = new cron.CronJob({
   cronTime: '00 18,22 * * 1-7',
   onTick: function() {
@@ -214,6 +279,18 @@ var prairie_dragon_raid_1 = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
+var prairie_dragon_raid_1T = new cron.CronJob({
+  cronTime: '00 18,22 * * 1-7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '440665629620699138',
+      message: 'Prairie Dragon Raid will be starting @ Maiz Prairie'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
 
 // initializing the bot
 /////////////////////////////////////////////////////////////////////
@@ -295,12 +372,12 @@ var pick_up_lines = [
 // greeting users (optional)
 /////////////////////////////////////////////////////////////////////
 bot.on("presence", function (user, userid, status, gameid) {
-        
+    /*    
     bot.sendMessage({
       to: '404465250033991694',
       message: "username: " + JSON.stringify(user) + " / " + JSON.stringify(userid) + "  / status: " + status + " / gameid: " + gameid
     });
-    
+    */
     if (status == "online") {
         switch (user) {
             case "Finley":
