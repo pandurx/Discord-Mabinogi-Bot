@@ -20,6 +20,7 @@ var bot = new Discord.Client({
 
 // guild battle
 /////////////////////////////////////////////////////////////////////
+/*
 var guild_battle = new cron.CronJob({
   cronTime: '00 23 * * 6',
   onTick: function() {
@@ -32,7 +33,7 @@ var guild_battle = new cron.CronJob({
   start: true,
   timeZone: 'America/New_York'
 });
-
+*/
 // cooking contest
 /////////////////////////////////////////////////////////////////////
 var chef_examination_1 = new cron.CronJob({
