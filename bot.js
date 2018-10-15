@@ -430,8 +430,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
 
             case 'help-wd-lure':
-              message.channel.send("Please consult the infographic for Luring strategy", {
-                file: "https://raw.githubusercontent.com/pandurx/pandurx-bot/wd-information/infographics/iria_raid_wd_info.png"
+              bot.on('message', message => {
+                message.channel.send("Consult the following Infographic on White Dragon Luring strategy", {
+                  files: ["https://raw.githubusercontent.com/pandurx/pandurx-bot/wd-information/infographics/iria_raid_wd_info.png"]
+                });
               });
             break;
 
