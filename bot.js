@@ -438,7 +438,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
               bot.sendMessage({
                 to: channelID,
-                message: 'Consult the following Infographic on White Dragon Luring strategy: https://raw.githubusercontent.com/pandurx/pandurx-bot/wd-information/infographics/iria_raid_wd_info.png'
+                message: 'Consult the following Infographic on White Dragon Luring strategy: https://www.dropbox.com/s/97ah826x0a3y04e/iria_raid_wd_info.png?dl=0'
               });
 
             break;
