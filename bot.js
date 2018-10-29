@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron'); 
-
+var axios = require('axios'); 
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -474,6 +474,36 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             break;
                 
+            case 'future':
+            
+            axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
+            .then(function (response) {
+              bot.sendMessage({
+                to: channelID,
+                message: 'CURRENT ITEMS'
+              });
+            
+            })
+            .catch(function (error) {
+              bot.sendMessage({
+                to: channelID,
+                message: 'NOPE! CURRENT ITEMS'
+              });
+            
+            });
+           
+
+
+            break;
+
+            case 'releases':
+            bot.sendMessage({
+                to: channelID,
+                message: 'RELEASES'
+            });
+            
+            break;
+
             case 'time':
                 var time = new Date();
                 bot.sendMessage({
