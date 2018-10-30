@@ -480,7 +480,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             .then(function (response) {
               bot.sendMessage({
                 to: channelID,
-                message: 'CURRENT ITEMS'
+                message: 'CURRENT ITEMS' + response
               });
             
             })
