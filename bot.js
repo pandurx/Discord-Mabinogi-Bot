@@ -373,12 +373,12 @@ var pick_up_lines = [
 // greeting users (optional)
 /////////////////////////////////////////////////////////////////////
 bot.on("presence", function (user, userid, status, gameid) {
-    /*    
+        
     bot.sendMessage({
-      to: '404465250033991694',
+      to: '535282907074396161',
       message: "username: " + JSON.stringify(user) + " / " + JSON.stringify(userid) + "  / status: " + status + " / gameid: " + gameid
     });
-    */
+    
     if (status == "online") {
         switch (user) {
             case "Finley":
