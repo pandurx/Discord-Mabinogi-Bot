@@ -41,7 +41,7 @@ bot.on('ready', function (evt) {
       
       //var channels = Object.entries(guild.channels);
       // list of channels
-      channels.forEach((channel) => {
+      guild.channels.forEach((channel) => {
         console.log(` -- ${channel.name} // ${channel.id}`)
 
       })
