@@ -44,7 +44,7 @@ bot.on('ready', function (evt) {
     })
   } else {
 
-      var channels = Object.entries(this.bot.servers.channels);
+      var channels = Object.entries(this.bot.servers['channels']);
       // list of channels
       channels.forEach((channel) => {
         console.log(` -- ${channel.name} // ${channel.id}`)
