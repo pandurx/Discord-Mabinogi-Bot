@@ -520,12 +520,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
 
             case 'wd-lure':
-              bot.on('message', message => {
+/*              bot.on('message', message => {
                 message.channel.send("Consult the following Infographic on White Dragon Luring strategy", {
                   files: ["https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9"]
                 });
               });
-/*
+
               bot.sendMessage({
                 to: channelID,
                 message: 'Consult the following Infographic on White Dragon Luring strategy: https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9'
