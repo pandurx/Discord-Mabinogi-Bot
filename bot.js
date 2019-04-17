@@ -37,11 +37,12 @@ bot.on('ready', function (evt) {
   if (Array.isArray(servers))
   {
     //console.log("channels ", servers.channels);
-    servers.forEach((guild) => {
+    servers.forEach((server) => {
       
       //var channels = Object.entries(guild.channels);
+      var channels = new Array(server.channels);
       // list of channels
-      guild.channels.forEach((channel) => {
+      channels.forEach((channel) => {
         console.log(` -- ${channel.name} // ${channel.id}`)
 
       })
