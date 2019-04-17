@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron'); 
-//var axios = require('axios'); 
+var axios = require('axios'); 
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -463,17 +463,18 @@ var pick_up_lines = [
 // greeting users (optional)
 /////////////////////////////////////////////////////////////////////
 bot.on("presence", function (user, userid, status, gameid) {
-        
+      
     bot.sendMessage({
       to: '535282907074396161',
-      message: "username: " + JSON.stringify(user) + " / " + JSON.stringify(userid) + "  / status: " + status + " / gameid: " + gameid
+      message: "username: " + JSON.stringify(user)
+
     });
     
     if (status == "online") {
         switch (user) {
             case "Finley":
                 bot.sendMessage({
-                  to: '404465250033991694',
+                  to: '535282907074396161',
                   message: "You're alive! Welcome back!!"
                 });
                 break;
@@ -545,14 +546,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'help':
                 bot.sendMessage({
                     to: channelID,
-                    message: '`commands will always begin with the exclamation mark! then ping, flirt, dailies, daily, help, roll, time, raid, contact`'
-                });
-            break;
-
-            case 'contact':
-                bot.sendMessage({
-                    to: channelID,
-                    message: '`this bot is self-hosted and in no way official tool for nexon, and is still work in progress. you can contact **Pandurx** for more information or report any issues relating to the bot`'
+                    message: '`commands will always begin with the exclamation mark! then ping, flirt, dailies, daily, help, roll, time, raid, contact, flip`'
                 });
             break;
             
@@ -580,7 +574,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'future':
             
-            /*axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
+            axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
             .then(function (response) {
               bot.sendMessage({
                 to: channelID,
@@ -594,7 +588,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 message: 'NOPE! CURRENT ITEMS'
               });
             
-            });*/
+            });
            
 
 
@@ -623,49 +617,8 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Prairie (6PM-6:30PM, 10PM-10:30PM) | Desert (1:30PM-2PM, 8PM-8:30PM) | Black (2PM-3PM, 10PM-11PM) EST'
                 });
             break;
-              
-            case 'get':
-                client.connect();
-                //'SELECT * FROM user_intro;'
-                //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
-                //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
-                var query_string = 'SELECT * FROM user_intro WHERE user_id = '+parseInt(userID)+';'
-                console.log('wquery ' + query_string);
-                client.query(query_string, (err, res) => {
-                    if (err) throw err;
-                    
-                  for (let row of res.rows) {
-                    bot.sendMessage({
-                        to: channelID,
-                        message: JSON.stringify(row)
-                    });
-                  }
-                    
-                    //console.log(JSON.stringify(row));
-                    client.end();
-                });
-            break;
+
                 
-            case 'set':
-                client.connect();
-                //'SELECT * FROM user_intro;'
-                //'INSERT INTO user_intro ('') VALUES (userID, "online", "whats new?", "boop");'
-                //{"user_id":1,"user_state":"online","user_data":"hello","user_command":"greet"}
-                var query_string = 'INSERT INTO user_intro (user_id, user_state, user_data, user_command) VALUES ('+parseInt(userID)+', \'heyoo\', \'whats new?\', \'boop\');'
-                console.log('wquery ' + query_string);
-                client.query(query_string, (err, res) => {
-                    if (err) throw err;
-
-                    client.end();
-                });
-        
-           
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'hey this is still in progress..' + userID// + process.env.DATABASE_URL
-               });
-            break;   
-
 		case 'update':
 
                 bot.sendMessage({
