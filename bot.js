@@ -670,7 +670,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
                 bot.sendMessage({
                     to: channelID,
-                    message: 'April 15 2019 8:17PM EDT'
+                    message: 'April 15 2019 9:20PM EDT'
                 });
             break;
             // Just add any case commands if you want to..
