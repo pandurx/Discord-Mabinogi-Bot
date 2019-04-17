@@ -32,8 +32,6 @@ bot.on('ready', function (evt) {
   // list of servers it is connected to
   
   var servers = new Array(bot.servers);
-  console.log("servers ", servers);
-
   if (Array.isArray(servers))
   {
     //console.log("channels ", servers.channels);
@@ -43,7 +41,8 @@ bot.on('ready', function (evt) {
       var channels = new Array(server.channels);
       // list of channels
       channels.forEach((channel) => {
-        console.log(` -- ${channel.name} // ${channel.id}`)
+        console.log("channel ",channel);
+        //console.log(` -- ${channel.name} // ${channel.id}`)
 
       })
     })
