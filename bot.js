@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron'); 
-
+var axios = require('axios'); 
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -520,15 +520,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
 
             case 'wd-lure':
-              /*bot.on('message', message => {
+              bot.on('message', message => {
                 message.channel.send("Consult the following Infographic on White Dragon Luring strategy", {
-                  files: ["https://raw.githubusercontent.com/pandurx/pandurx-bot/wd-information/infographics/iria_raid_wd_info.png"]
+                  files: ["https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9"]
                 });
-              });*/
+              });
 
               bot.sendMessage({
                 to: channelID,
-                message: 'Consult the following Infographic on White Dragon Luring strategy: https://www.dropbox.com/s/97ah826x0a3y04e/iria_raid_wd_info.png?dl=0'
+                message: 'Consult the following Infographic on White Dragon Luring strategy: https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9'
               });
 
             break;
@@ -578,6 +578,36 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             break;
                 
+            case 'future':
+            
+            axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
+            .then(function (response) {
+              bot.sendMessage({
+                to: channelID,
+                message: 'CURRENT ITEMS' + response
+              });
+            
+            })
+            .catch(function (error) {
+              bot.sendMessage({
+                to: channelID,
+                message: 'NOPE! CURRENT ITEMS'
+              });
+            
+            });
+           
+
+
+            break;
+
+            case 'releases':
+            bot.sendMessage({
+                to: channelID,
+                message: 'RELEASES'
+            });
+            
+            break;
+
             case 'time':
                 var time = new Date();
                 bot.sendMessage({
