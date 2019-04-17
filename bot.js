@@ -122,7 +122,7 @@ var yeti_raid_1 = new cron.CronJob({
 });
 
 var giant_sandworm_raid_1 = new cron.CronJob({
-  cronTime: '00 13,04 * * 1-7',
+  cronTime: '00 13,02 * * 1-7',
   onTick: function() {
     bot.sendMessage({
       to: '409032469959016449',
@@ -135,7 +135,7 @@ var giant_sandworm_raid_1 = new cron.CronJob({
 });
 
 var giant_sandworm_raid_1B = new cron.CronJob({
-  cronTime: '00 13,04 * * 1-7',
+  cronTime: '00 13,02 * * 1-7',
   onTick: function() {
     bot.sendMessage({
       to: '554150587705458708',
