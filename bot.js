@@ -4,110 +4,45 @@ var auth = require('./auth.json');
 var cron = require('cron'); 
 var axios = require('axios'); 
 
-// Configure logger settings
+var raidAnnouncementChannels = [];
+
+// configure logging
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
     colorize: true
 });
-
 logger.level = 'debug';
-// Initialize Discord Bot
+
+// create the bot
 var bot = new Discord.Client({
    token: process.env.BOT_TOKEN,
    autorun: true
 });
 
 
-// guild battle
-/////////////////////////////////////////////////////////////////////
-/*
-var guild_battle = new cron.CronJob({
-  cronTime: '00 23 * * 6',
-  onTick: function() {
-    bot.sendMessage({
-      to: '404465250033991694',
-      message: '**GUILD BATTLE IS STARTING**'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
-*/
-// cooking contest
-/////////////////////////////////////////////////////////////////////
-var chef_examination_1 = new cron.CronJob({
-  cronTime: '00 13,23 * * 6',
-  onTick: function() {
-    bot.sendMessage({
-      to: '409032469959016449',
-      message: 'Chef Exam is starting on channel 3'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
+// initializing the bot
+bot.on('ready', function (evt) {
 
-/*
-var cooking_contest_1 = new cron.CronJob({
-  cronTime: '00 23 * * 6',
-  onTick: function() {
-    bot.sendMessage({
-      to: '404465250033991694',
-      message: 'Chef Exam is starting on channel 3'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
-*/
+  bot.setPresence( { 
+      game: { name: 'you play', type: 3 }
+  });
+  
+  const { Client } = require('pg');
 
-// preliminary and final jousting
-/////////////////////////////////////////////////////////////////////
-var pre_jousting_time_1 = new cron.CronJob({
-  cronTime: '00 01 * * 1-6',
-  onTick: function() {
-    bot.sendMessage({
-      to: '409032469959016449',
-      message: 'Preliminary Jousting begins'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
+  // list of servers it is connected to
+  bot.guilds.forEach((guild) => {
+    console.log(" - " + guild.name)
+    
+    // list of channels
+    guild.channels.forEach((channel) => {
+      console.log(` -- ${channel.name} // ${channel.id}`)
 
-var pre_jousting_time_2 = new cron.CronJob({
-  cronTime: '00 22 * * 1-6',
-  onTick: function() {
-    bot.sendMessage({
-      to: '409032469959016449',
-      message: 'Preliminary Jousting begins'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
-});
-
-var final_jousting_time = new cron.CronJob({
-  cronTime: '00 22 * * 7',
-  onTick: function() {
-    bot.sendMessage({
-      to: '409032469959016449',
-      message: 'Finals for Jousting begins on channel 2'
-    });
-      
-  },
-  start: true,
-  timeZone: 'America/New_York'
+    })
+  })
+    
 });
 
 
-// other raids
-/////////////////////////////////////////////////////////////////////
 var yeti_raid_1 = new cron.CronJob({
   cronTime: '30 16,20 * * 1-7',
   onTick: function() {
@@ -383,34 +318,97 @@ var prairie_dragon_raid_1B = new cron.CronJob({
   timeZone: 'America/New_York'
 });
 
-// initializing the bot
+
+
+// guild battle
 /////////////////////////////////////////////////////////////////////
-bot.on('ready', function (evt) {
-
-    bot.setPresence( { 
-        game: { name: 'you play', type: 3 }
+/*
+var guild_battle = new cron.CronJob({
+  cronTime: '00 23 * * 6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: '**GUILD BATTLE IS STARTING**'
     });
-    
-    const { Client } = require('pg');
-
-    // configure the database connection string
-	const client = new Client({
-	  connectionString: process.env.DATABASE_URL,
-	  ssl: true,
-	});
-
-	client.connect();
-	//ALTER TABLE raw ALTER COLUMN id TYPE BIGINT;
-	    //SELECT table_schema,table_name FROM information_schema.tables;
-	client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-	  if (err) throw err;
-	  for (let row of res.rows) {
-	    console.log(JSON.stringify(row));
-	  }
-	  client.end();
-	});
-	    
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
 });
+*/
+// cooking contest
+/////////////////////////////////////////////////////////////////////
+var chef_examination_1 = new cron.CronJob({
+  cronTime: '00 13,23 * * 6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '409032469959016449',
+      message: 'Chef Exam is starting on channel 3'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+/*
+var cooking_contest_1 = new cron.CronJob({
+  cronTime: '00 23 * * 6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '404465250033991694',
+      message: 'Chef Exam is starting on channel 3'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+*/
+
+// preliminary and final jousting
+/////////////////////////////////////////////////////////////////////
+var pre_jousting_time_1 = new cron.CronJob({
+  cronTime: '00 01 * * 1-6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '409032469959016449',
+      message: 'Preliminary Jousting begins'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var pre_jousting_time_2 = new cron.CronJob({
+  cronTime: '00 22 * * 1-6',
+  onTick: function() {
+    bot.sendMessage({
+      to: '409032469959016449',
+      message: 'Preliminary Jousting begins'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+var final_jousting_time = new cron.CronJob({
+  cronTime: '00 22 * * 7',
+  onTick: function() {
+    bot.sendMessage({
+      to: '409032469959016449',
+      message: 'Finals for Jousting begins on channel 2'
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
+
+
 
 
 // helper function: translates the dailies
