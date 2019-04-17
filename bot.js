@@ -31,20 +31,21 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
   
-  var servers = Object.entries(bot.servers);
+  var servers = new Array(bot.servers);
   console.log("servers ", servers);
 
   if (Array.isArray(servers))
   {
-    servers.forEach((guild) => {
+    console.log("channels ", servers.channels);
+    //servers.forEach((guild) => {
       
-      var channels = Object.entries(guild.channels);
+      //var channels = Object.entries(guild.channels);
       // list of channels
-      channels.forEach((channel) => {
-        console.log(` -- ${channel.name} // ${channel.id}`)
+      //channels.forEach((channel) => {
+        //console.log(` -- ${channel.name} // ${channel.id}`)
 
-      })
-    })
+      //})
+    //})
   }
     
 });
