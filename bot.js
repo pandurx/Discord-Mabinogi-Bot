@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron'); 
-var axios = require('axios'); 
+//var axios = require('axios'); 
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -525,12 +525,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                   files: ["https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9"]
                 });
               });
-
+*/
               bot.sendMessage({
                 to: channelID,
                 message: 'Consult the following Infographic on White Dragon Luring strategy: https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9'
               });
-*/
+
             break;
 
             case 'dailies':
