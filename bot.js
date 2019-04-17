@@ -30,10 +30,11 @@ bot.on('ready', function (evt) {
   const { Client } = require('pg');
 
   // list of servers it is connected to
-  console.log("servers ", bot.servers);
-  if (Array.isArray(bot.servers))
+  console.log("servers ", JSON.parse(bot.servers));
+  var servers = JSON.parse(bot.servers);
+  if (Array.isArray(servers))
   {
-    bot.servers.forEach((guild) => {
+    servers.forEach((guild) => {
       
       var channels = Object.entries(guild.channels);
       // list of channels
@@ -42,14 +43,6 @@ bot.on('ready', function (evt) {
 
       })
     })
-  } else {
-      var server = Object.entries(this.bot.servers);
-      var channels = Object.entries(server.channels);
-      // list of channels
-      channels.forEach((channel) => {
-        console.log(` -- ${channel.name} // ${channel.id}`)
-
-      })
   }
     
 });
