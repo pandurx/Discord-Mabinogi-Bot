@@ -32,7 +32,7 @@ bot.on('ready', function (evt) {
   // list of servers it is connected to
   console.log("servers ", bot.servers);
   bot.servers.forEach((guild) => {
-    console.log(" - " + guild.name)
+    logger.info("hello world?");
     
     // list of channels
     guild.channels.forEach((channel) => {
