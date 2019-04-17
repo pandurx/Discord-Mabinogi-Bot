@@ -556,6 +556,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
             
+	    case 'flip':
+		var coin = ( Math.floor(Math.random() * Math.floor(100)) > 50 ) ? 'heads' : 'tails';
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'You flipped ' + coin '.'
+                });
+                
+            break;
+			
             case 'roll':
                 bot.sendMessage({
                     to: channelID,
