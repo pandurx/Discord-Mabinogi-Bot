@@ -2,7 +2,7 @@ var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron'); 
-var axios = require('axios'); 
+//var axios = require('axios'); 
 
 var raidAnnouncementChannels = [];
 
@@ -572,7 +572,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'future':
             
-            axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
+            /*axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
             .then(function (response) {
               bot.sendMessage({
                 to: channelID,
@@ -586,7 +586,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 message: 'NOPE! CURRENT ITEMS'
               });
             
-            });
+            });*/
            
 
 
