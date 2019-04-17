@@ -31,15 +31,23 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
   console.log("servers ", bot.servers);
-  bot.servers.forEach((guild) => {
-    logger.info("hello world?");
-    
-    // list of channels
-    guild.channels.forEach((channel) => {
-      console.log(` -- ${channel.name} // ${channel.id}`)
+  if (Array.isArray(bot.servers))
+  {
+    bot.servers.forEach((guild) => {
+      
+      // list of channels
+      guild.channels.forEach((channel) => {
+        console.log(` -- ${channel.name} // ${channel.id}`)
 
+      })
     })
-  })
+  } else {
+      // list of channels
+      bot.servers.channels.forEach((channel) => {
+        console.log(` -- ${channel.name} // ${channel.id}`)
+
+      })
+  }
     
 });
 
