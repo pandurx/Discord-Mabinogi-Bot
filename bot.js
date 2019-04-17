@@ -30,6 +30,7 @@ bot.on('ready', function (evt) {
   const { Client } = require('pg');
 
   // list of servers it is connected to
+  console.log("servers ", bot.servers);
   bot.servers.forEach((guild) => {
     console.log(" - " + guild.name)
     
