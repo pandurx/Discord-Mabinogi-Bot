@@ -620,7 +620,15 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'hey this is still in progress..' + userID// + process.env.DATABASE_URL
                });
-            break;             
+            break;   
+
+		case 'update':
+
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'April 15 2019 8:17PM EDT'
+                });
+            break;
             // Just add any case commands if you want to..
          }
      }
