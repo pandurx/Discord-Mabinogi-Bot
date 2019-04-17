@@ -525,12 +525,12 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                   files: ["https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9"]
                 });
               });
-
+*/
               bot.sendMessage({
                 to: channelID,
                 message: 'Consult the following Infographic on White Dragon Luring strategy: https://photos.app.goo.gl/Bv9jB22ygLMGCEGc9'
               });
-*/
+
             break;
 
             case 'dailies':
@@ -580,7 +580,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             case 'future':
             
-            axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
+            /*axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
             .then(function (response) {
               bot.sendMessage({
                 to: channelID,
@@ -594,7 +594,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 message: 'NOPE! CURRENT ITEMS'
               });
             
-            });
+            });*/
            
 
 
