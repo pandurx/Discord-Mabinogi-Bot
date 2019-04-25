@@ -570,15 +570,21 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 
             break;
 			
-            case 'roll':
+      case 'roll':
                 bot.sendMessage({
                     to: channelID,
                     message: 'You rolled ' + Math.floor(Math.random() * Math.floor(100)) + ' ... '
                 });
                 
             break;
-                
-            case 'future':
+      case 'announce_hasidim_raid':
+            bot.sendMessage({
+                to: channelID,
+                message: 'HASIDIM RAID'
+            });
+            
+        break;
+      case 'future':
             
             /*axios.get('https://api.github.com/repos/pandurx/pandurx-bot/issues?state=open')
             .then(function (response) {
@@ -600,7 +606,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 
             break;
 
-            case 'releases':
+      case 'releases':
             bot.sendMessage({
                 to: channelID,
                 message: 'RELEASES'
@@ -608,7 +614,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             
             break;
 
-            case 'time':
+      case 'time':
                 var time = new Date();
                 bot.sendMessage({
                     to: channelID,
@@ -616,7 +622,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
                 
-            case 'raid':
+      case 'raid':
                 var time = new Date();
                 bot.sendMessage({
                     to: channelID,
@@ -625,7 +631,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             break;
 
                 
-		case 'update':
+		  case 'update':
 
                 bot.sendMessage({
                     to: channelID,
