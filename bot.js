@@ -39,7 +39,7 @@ bot.on('ready', function (evt) {
     servers.forEach((server) => {
       
       console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      console.log("asdf ", server);
+      console.log("server ", server);
 
 
     })
