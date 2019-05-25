@@ -37,11 +37,11 @@ bot.on('ready', function (evt) {
   {
     //console.log("servers ", servers);
     botServers.forEach((servers) => {
-      
-      servers.forEach(server => {
-        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        console.log("server ", server);
-      })
+      console.log("servers ",servers);
+      // servers.forEach(server => {
+      //   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      //   console.log("server ", server);
+      // })
 
 
     })
