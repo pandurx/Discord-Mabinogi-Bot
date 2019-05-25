@@ -37,8 +37,8 @@ bot.on('ready', function (evt) {
     //console.log("servers ", servers);
     servers.forEach((server) => {
       
-      var channels = new Array(server.channels);
-      console.log("asdf ", channels);
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      console.log("asdf ", server);
 
 
     })
