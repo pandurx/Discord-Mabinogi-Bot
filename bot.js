@@ -31,7 +31,8 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
   
-  var servers = new Array(bot.servers);
+  //var servers = new Array(bot.servers);
+  var servers = bot.servers;
   if (Array.isArray(servers))
   {
     //console.log("servers ", servers);
