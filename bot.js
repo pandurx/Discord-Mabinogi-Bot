@@ -36,7 +36,12 @@ bot.on('ready', function (evt) {
   {
     //console.log("servers ", servers);
     servers.forEach((server) => {
-      console.log("server ", server);
+      
+      var channels = server.channels;
+
+      channels.forEach((channel) => {
+        console.log("channel ", channel);
+      });
 
     })
   }
