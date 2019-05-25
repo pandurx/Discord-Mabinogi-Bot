@@ -41,11 +41,11 @@ bot.on('ready', function (evt) {
       //var channels = Object.entries(guild.channels);
       var channels = new Array(server.channels);
       // list of channels
-      //channels.forEach((channel) => {
+      channels.forEach((channel) => {
         console.log("channel  >> ",channels);
-        //console.log(` -- ${channel.name} // ${channel.id}`)
+        console.log(` -- ${channel.name} // ${channel.id}`)
 
-      //})
+      })
     })
   }
     
