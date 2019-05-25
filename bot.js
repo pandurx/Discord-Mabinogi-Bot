@@ -34,18 +34,10 @@ bot.on('ready', function (evt) {
   var servers = new Array(bot.servers);
   if (Array.isArray(servers))
   {
-    console.log("servers ", servers);
-    console.log("channels ", servers.channels);
+    //console.log("servers ", servers);
     servers.forEach((server) => {
-      
-      //var channels = Object.entries(guild.channels);
-      var channels = new Array(server.channels);
-      // list of channels
-      channels.forEach((channel) => {
-        console.log("channel  >> ",channels);
-        console.log(` -- ${channel.name} // ${channel.id}`)
+      console.log("server ", server);
 
-      })
     })
   }
     
