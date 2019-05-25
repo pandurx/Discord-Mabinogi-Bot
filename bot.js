@@ -34,7 +34,8 @@ bot.on('ready', function (evt) {
   var servers = new Array(bot.servers);
   if (Array.isArray(servers))
   {
-    //console.log("channels ", servers.channels);
+    console.log("servers ", servers);
+    console.log("channels ", servers.channels);
     servers.forEach((server) => {
       
       //var channels = Object.entries(guild.channels);
