@@ -31,15 +31,17 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
   
-  //var servers = new Array(bot.servers);
-  var servers = bot.servers;
+  var botServers = new Array(bot.servers);
+  //var servers = bot.servers;
   if (Array.isArray(servers))
   {
     //console.log("servers ", servers);
-    servers.forEach((server) => {
+    botServers.forEach((servers) => {
       
-      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      console.log("server ", server);
+      servers.forEach(server => {
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("server ", server);
+      })
 
 
     })
