@@ -38,11 +38,8 @@ bot.on('ready', function (evt) {
     servers.forEach((server) => {
       
       var channels = new Array(server.channels);
-      
-      //console.log("server" ,server);
-      channels.forEach((channel) => {
-        console.log("channel ", channel);
-      });
+      console.log("asdf ", server.channels);
+
 
     })
   }
