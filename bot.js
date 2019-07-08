@@ -4,7 +4,7 @@ var auth = require('./auth.json');
 var cron = require('cron'); 
 //var axios = require('axios'); 
 
-var raidAnnouncementChannels = [];
+var raidChannelId = '';
 
 // configure logging
 logger.remove(logger.transports.Console);
@@ -31,11 +31,16 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
 
+  
   for (x in bot.servers) {
     console.log("server >> ", bot.servers[x]);
 
     for (z in bot.servers[x].channels) {
       console.log("channels >> ", bot.servers[x].channels[z]);
+
+      if (bot.servers[x].channels[z].name == "Scheduled Raid Announcements") {
+        raidChannelId = z;
+      }
     }
   }
     
@@ -47,7 +52,7 @@ var yeti_raid_1 = new cron.CronJob({
   onTick: function() {
     bot.sendMessage({
       to: '409032469959016449',
-      message: 'Yeti Raid will be starting in Physis'
+      message: 'Yeti Raid will be starting in Physis ' + raidChannelId
     });
       
   },
