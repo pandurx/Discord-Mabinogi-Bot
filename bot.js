@@ -38,7 +38,7 @@ bot.on('ready', function (evt) {
     for (z in bot.servers[x].channels) {
       console.log("channels >> ", bot.servers[x].channels[z]);
 
-      if (bot.servers[x].channels[z].name == "Scheduled Raid Announcements") {
+      if (bot.servers[x].channels[z].name == "scheduled-raid-announcements") {
         raidChannelId = z;
       }
     }
