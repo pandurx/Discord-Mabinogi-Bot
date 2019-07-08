@@ -14,6 +14,8 @@ const Bot = () => {
                 game: { name: '!help', type: 0 }
             });
           
+            bot.raid = new Array();
+
             for (x in bot.servers)
               for (z in bot.servers[x].channels)
                 if (bot.servers[x].channels[z].name == "scheduled-raids")
