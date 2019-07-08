@@ -5,7 +5,7 @@ var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {
     bot.sendMessage({
-      to: '501060747800084491',
+      to: bot.raid,
       message: 'Testing Cron ' + bot.raid
     });
       
