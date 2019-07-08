@@ -4,20 +4,12 @@ const cron = require('cron');
 var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {
-    // bot.sendMessage({
-    //   to: bot.raid,
-    //   message: 'Testing Cron ' + bot.raid
-    // });
-    for (x in bot.raid) {
-      bot.channels.get(bot.raid[x]).send('My Message' + x);
-      
+    foreach (x in bot.raid) {
+      bot.sendMessage({
+        to: x,
+        message: 'Testing Cron ' + x
+      });
     }
-
-    for (x in bot.servers)
-      for (z in bot.servers[x].channels)
-        if (bot.servers[x].channels[z].name == "scheduled-raids") {
-          bot.guilds.get(x).channels.get(z).send("testing ... " + z);
-        }
 
   },
   start: true,
