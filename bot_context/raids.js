@@ -7,8 +7,8 @@ var test = new cron.CronJob({
     for (x in bot.raid) {
       console.log("testing cron - " + x);
       bot.sendMessage({
-        to: x,
-        message: 'Testing Cron ' + x
+        to: bot.raid[x],
+        message: 'Testing Cron ' + bot.raid[x]
       });
     }
 
