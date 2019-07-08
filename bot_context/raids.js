@@ -4,7 +4,7 @@ const cron = require('cron');
 var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {
-    foreach (x in bot.raid) {
+    for (x in bot.raid) {
       bot.sendMessage({
         to: x,
         message: 'Testing Cron ' + x
