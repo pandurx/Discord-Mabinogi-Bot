@@ -1,3 +1,5 @@
+var cron = require('cron');
+
 var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {

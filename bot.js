@@ -3,7 +3,7 @@ var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron');
 
-var raids = require('./bot_context/raids');
+var Raids = require('./bot_context/raids');
 
 var raidChannelId = '';
 
@@ -27,6 +27,7 @@ bot.on('ready', function (evt) {
   });
   
   const { Client } = require('pg');
+  const raids = new Raids();
 
   // list of servers it is connected to
   for (x in bot.servers)
