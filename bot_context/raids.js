@@ -1,11 +1,12 @@
-var cron = require('cron');
+const bot = require('../bot.js')
+const cron = require('cron');
 
 var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {
     bot.sendMessage({
       to: '501060747800084491',
-      message: 'Testing Cron ' + raidChannelId
+      message: 'Testing Cron ' + bot.raid
     });
       
   },
