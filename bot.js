@@ -34,7 +34,7 @@ bot.on('ready', function (evt) {
   console.log("bot server ", bot.servers);
 
   for (x in bot.servers) {
-    console.log("server >> ", x);
+    console.log("server >> ", bot.servers[x]);
   }
     
 });
