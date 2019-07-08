@@ -30,11 +30,13 @@ bot.on('ready', function (evt) {
   const { Client } = require('pg');
 
   // list of servers it is connected to
-  
-  console.log("bot server ", bot.servers);
 
   for (x in bot.servers) {
     console.log("server >> ", bot.servers[x]);
+
+    for (z in bot.servers[x].channels) {
+      console.log("channels >> ", bot.servers[x].channels[z]);
+    }
   }
     
 });
