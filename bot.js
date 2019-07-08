@@ -31,8 +31,11 @@ bot.on('ready', function (evt) {
 
   // list of servers it is connected to
   
-  var serverObject = new Array(bot.servers);
   console.log("bot server ", bot.servers);
+
+  for (x in bot.servers) {
+    console.log("server >> ", x);
+  }
     
 });
 
