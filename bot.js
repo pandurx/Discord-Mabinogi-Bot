@@ -513,6 +513,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
 
+            case 'test':
+                bot.sendMessage({
+                  to: channelID,
+                  message: 'Raid Channel Id ' + raidChannelId
+                })
+            break;
+
             case 'flirt':
             	var randomInt = Math.floor(Math.random() * Math.floor(5))
             	var line = pick_up_lines[randomInt];
