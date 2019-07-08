@@ -24,7 +24,7 @@ var bot = new Discord.Client({
 bot.on('ready', function (evt) {
 
   bot.setPresence( { 
-      game: { name: 'you play', type: 3 }
+      game: { name: '!help', type: 0 }
   });
   
   const { Client } = require('pg');
