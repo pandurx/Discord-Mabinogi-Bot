@@ -3,7 +3,7 @@ var logger = require('winston');
 var auth = require('./auth.json');
 var cron = require('cron');
 
-var raids = require('./bot_content/raids');
+var raids = require('./bot_context/raids');
 
 var raidChannelId = '';
 
