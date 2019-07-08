@@ -4,11 +4,14 @@ const cron = require('cron');
 var test = new cron.CronJob({
   cronTime: '* * * * *',
   onTick: function() {
-    bot.sendMessage({
-      to: bot.raid,
-      message: 'Testing Cron ' + bot.raid
-    });
-      
+    // bot.sendMessage({
+    //   to: bot.raid,
+    //   message: 'Testing Cron ' + bot.raid
+    // });
+    for (x in bot.raid) {
+      client.channels.get(x).send('My Message' + x);
+    }
+
   },
   start: true,
   timeZone: 'America/New_York'

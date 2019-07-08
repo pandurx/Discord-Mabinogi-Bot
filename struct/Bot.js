@@ -17,7 +17,7 @@ const Bot = () => {
             for (x in bot.servers)
               for (z in bot.servers[x].channels)
                 if (bot.servers[x].channels[z].name == "scheduled-raids")
-                  bot.raid = z;
+                  bot.raid.push(z);
         });
 
         bot.on("error", console.error)
