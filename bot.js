@@ -1,8 +1,9 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-var cron = require('cron'); 
-//var axios = require('axios'); 
+var cron = require('cron');
+
+var raids = require('./bot_content/raids');
 
 var raidChannelId = '';
 
@@ -19,10 +20,8 @@ var bot = new Discord.Client({
    autorun: true
 });
 
-
 // initializing the bot
 bot.on('ready', function (evt) {
-
   bot.setPresence( { 
       game: { name: '!help', type: 0 }
   });
@@ -30,20 +29,10 @@ bot.on('ready', function (evt) {
   const { Client } = require('pg');
 
   // list of servers it is connected to
-
-  
-  for (x in bot.servers) {
-    console.log("server >> ", bot.servers[x]);
-
-    for (z in bot.servers[x].channels) {
-      console.log("channels >> ", bot.servers[x].channels[z]);
-
-      if (bot.servers[x].channels[z].name == "scheduled-raid-announcements") {
+  for (x in bot.servers)
+    for (z in bot.servers[x].channels)
+      if (bot.servers[x].channels[z].name == "scheduled-raids")
         raidChannelId = z;
-      }
-    }
-  }
-    
 });
 
 

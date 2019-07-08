@@ -1,3 +1,16 @@
+var test = new cron.CronJob({
+  cronTime: '* * * * *',
+  onTick: function() {
+    bot.sendMessage({
+      to: '501060747800084491',
+      message: 'Testing Cron ' + raidChannelId
+    });
+      
+  },
+  start: true,
+  timeZone: 'America/New_York'
+});
+
 var yeti_raid_1 = new cron.CronJob({
     cronTime: '30 16,20 * * 1-7',
     onTick: function() {
