@@ -16,6 +16,7 @@ const Bot = () => {
           
             bot.raid = new Array();
             bot.misc = new Array();
+            bot.integration_raid = new Array();
 
             for (x in bot.servers)
                 for (z in bot.servers[x].channels)
@@ -26,6 +27,11 @@ const Bot = () => {
                 for (z in bot.servers[x].channels)
                     if (bot.servers[x].channels[z].name == "scheduled-events")
                         bot.misc.push(z);
+
+            for (x in bot.servers)
+                for (z in bot.servers[x].channels)
+                    if (bot.servers[x].channels[z].name == "integration-raid")
+                        bot.integration_raid.push(z);
         });
 
         bot.on("error", console.error)
