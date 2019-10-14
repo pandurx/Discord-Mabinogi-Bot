@@ -6,6 +6,13 @@ bot.on('message', function (user, userId, channelId, message, event) {
         var command = message.substring(1);
         
         switch(command) {
+            case 'help': 
+                bot.sendMessage({
+                    to: channelId,
+                    message: 'bot will respond with prefix exclamation mark, setup; ping; roll'
+                });
+            break;
+
             case 'setup':
                 bot.sendMessage({
                     to: channelId,
