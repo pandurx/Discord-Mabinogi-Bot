@@ -23,13 +23,19 @@ bot.on('message', function (user, userId, channelId, message, event) {
             break;
 
             case 'dev-issues':
-
                 let response = httpGet("https://api.github.com/repos/pandurx/mabinogi-bot/issues?state=open");
                 let filtered = response.map(x => x.url);
                 bot.sendMessage({
                     to: channelId,
                     message: 'list of open issues ' + JSON.stringify(filtered);
                 });
+            break;
+
+            case 'white-dragon':
+                let infographic = 'https://github.com/pandurx/mabinogi-bot/blob/add-help-cmd/infographics/iria_raid_wd_info.png';
+                message.channel.send("Please consult the infographic for Luring strategy", {
+                    file: infographic
+                  });
             break;
 
             case 'setup':
